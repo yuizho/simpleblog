@@ -1,0 +1,22 @@
+<form action="/blog/write/" method="post">
+  title:
+  <input type="text" name="title"/>
+  <br/>
+  content:
+  <textarea name="content" rows="3"></textarea>
+  <input type="submit" value="投稿"/>
+</form>
+
+{% if content_list %}
+    <ul>
+    {% for c in content_list %}
+        <li>{{c.title}}
+          <div>{{c.content}}</div>
+          <div>{{c.date}}</div>
+        </li>
+        <br/>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
