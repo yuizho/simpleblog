@@ -1,10 +1,9 @@
-<form action="/blog/write/" method="post">{% csrf_token %}
-  title:
-  <input type="text" name="title"/>
-  <br/>
-  content:
-  <textarea name="content" rows="3"></textarea>
+<form action="/blog/write/" method="post">
+  <fieldset>
+  {% csrf_token %}
+  {{ form.as_p }}
   <input type="submit" value="投稿"/>
+  </fieldset>
 </form>
 
 {% if content_list %}
